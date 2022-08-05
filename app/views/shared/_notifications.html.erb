@@ -1,5 +1,5 @@
-<% flash.messages.each do |key, content| %>
+<% flash.each do |type, message| %>
   <div class="alert alert-primary">
-    <%= content %>
+    <%= message %>
   </div>
 <% end %>
