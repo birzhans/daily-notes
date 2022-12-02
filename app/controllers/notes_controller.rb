@@ -22,7 +22,7 @@ class NotesController < ApplicationController
     if @note.save
       render turbo_stream: [
         turbo_stream.prepend('notes', @note),
-        turbo_stream.replace('new-note-form', partial: 'form', locals: { note: Note.new })
+        turbo_stream.replace('new-note-form', partial: 'new_note_button')
       ]
     else
       render 'new'

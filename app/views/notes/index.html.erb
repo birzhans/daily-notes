@@ -1,7 +1,13 @@
-<div class="row justify-content-center" id="notes">
-  <%= render @notes %>
-</div>
+<div class="row">
+  <div class="col-4"></div>
 
-<%= turbo_frame_tag "new-note-form" do %>
-  <%= link_to 'New note', new_note_path %>
-<% end %>
+  <div class="col-4">
+    <div class="row" id="notes">
+      <%= render @notes %>
+    </div>
+
+    <%= render 'new_note_button' %>
+  </div>
+
+  <div class="col-4"></div>
+</div>
