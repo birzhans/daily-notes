@@ -3,7 +3,7 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:show, :edit, :update, :destroy]
 
   def index
-    @notes = current_user.notes
+    @notes = current_user.notes.ordered
   end
 
   def show
@@ -25,18 +25,17 @@ class NotesController < ApplicationController
         turbo_stream.replace('new-note-form', partial: 'notes/partials/new_note_button')
       ]
     else
-      render 'new'
+      render :new
     end
   end
 
   def update
     if @note.update(note_params)
       render turbo_stream: [
-        turbo_stream.prepend('notes', @note),
-        turbo_stream.replace('new-note-form', partial: 'notes/partials/new_note_button')
+        turbo_stream.prepend('notes', @note)
       ]
     else
-      render 'edit'
+      render :edit
     end
   end
 
