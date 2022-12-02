@@ -22,7 +22,7 @@ class NotesController < ApplicationController
     if @note.save
       render turbo_stream: [
         turbo_stream.prepend('notes', @note),
-        turbo_stream.replace('new-note-form', partial: 'new_note_button')
+        turbo_stream.replace('new-note-form', partial: 'notes/partials/new_note_button')
       ]
     else
       render 'new'
@@ -31,7 +31,10 @@ class NotesController < ApplicationController
 
   def update
     if @note.update(note_params)
-      redirect_to @note
+      render turbo_stream: [
+        turbo_stream.prepend('notes', @note),
+        turbo_stream.replace('new-note-form', partial: 'notes/partials/new_note_button')
+      ]
     else
       render 'edit'
     end

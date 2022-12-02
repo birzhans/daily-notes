@@ -1,12 +1,6 @@
 <%= turbo_frame_tag "new-note-form" do %>
   <div class="card my-2 p-3">
     <%= render 'form' %>
-
-    <%= link_to notes_path do %>
-      <div class="mt-1 btn btn-outline-secondary">
-        <i class="bi bi-arrow-left-circle"></i>
-        Back
-      </div>
-    <% end %>
+    <%= render 'notes/partials/back_button' %>
   </div>
 <% end %>
