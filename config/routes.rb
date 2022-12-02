@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   }
 
   resources :notes
+
+  get :profile, to: 'users#profile'
 end

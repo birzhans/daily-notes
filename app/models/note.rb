@@ -3,5 +3,5 @@ class Note < ApplicationRecord
 
   validates :body, :date, presence: true
 
-  scope :ordered, -> { order(:date) }
+  scope :ordered, -> { order(date: :desc) }
 end
