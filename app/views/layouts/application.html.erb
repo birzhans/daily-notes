@@ -11,12 +11,10 @@
   </head>
 
   <body>
-    <div class="m-0 m-lg-5">
-      <%= render 'shared/navbar' %>
-      <%= render 'shared/notifications' %>
-      <div class="m-0 m-lg-3">
-        <%= yield %>
-      </div>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/notifications' %>
+    <div class="m-0 m-lg-3">
+      <%= yield %>
     </div>
   </body>
 </html>
