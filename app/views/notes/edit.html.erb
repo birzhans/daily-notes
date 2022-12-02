@@ -1,0 +1,9 @@
+ <%= turbo_frame_tag dom_id(@note) do %> 
+  <div class="card col-3 m-2 p-2">
+    <h2>Edit note</h2>
+    
+    <%= render 'form' %>
+
+    <p><%= link_to 'Back', notes_path %></p>
+  </div>
+<% end %>

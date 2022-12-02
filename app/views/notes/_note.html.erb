@@ -1,0 +1,11 @@
+ <%= turbo_frame_tag dom_id(note) do %>
+  <div class="card m-2 p-2">
+    <div><%= note.date %></div>
+    <div><%= note.body %></div>
+
+    <div class="row mt-1">
+      <div class="col-3"><%= link_to 'Destroy', note, data: { "turbo-method": :delete } %></div>
+      <div class="col-3"><%= link_to 'Edit', edit_note_path(note) %></div>
+    </div>
+  </div>
+<% end %>
