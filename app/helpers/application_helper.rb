@@ -9,4 +9,10 @@ module ApplicationHelper
 
     html.join.html_safe
   end
+
+  def record_field(record, field)
+    return unless record.respond_to?(field)
+
+    render RecordFieldComponent.new(record: record, field: field) 
+  end
 end

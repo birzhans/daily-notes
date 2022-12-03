@@ -4,45 +4,10 @@
   <div class="col-4">
     <div class="card p-3">
       <h2 class="text-center">Profile</h1>
-      <div class="row">
-        <div class="col-6 fw-bold">
-          Username
-        </div>
-
-        <div class="col-6">
-          <%= @user.username %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 fw-bold">
-          Email
-        </div>
-
-        <div class="col-6">
-          <%= @user.email %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 fw-bold">
-          Joined
-        </div>
-
-        <div class="col-6">
-          <%= @user.created_at.strftime('%e %B, %Y') %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-6 fw-bold">
-          Notes count
-        </div>
-
-        <div class="col-6">
-          <%= @user.notes.count %>
-        </div>
-      </div>
+      <%= record_field @user, :username %>
+      <%= record_field @user, :email %>
+      <%= record_field @user, :joined %>
+      <%= record_field @user, :notes_count %>
     </div>
 
     <div class="mt-4">

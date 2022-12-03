@@ -36,6 +36,8 @@ gem "redis", "~> 4.0"
 # auth
 gem "devise"
 
+gem "view_component"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
