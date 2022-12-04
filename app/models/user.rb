@@ -16,6 +16,10 @@ class User < ApplicationRecord
     notes.count
   end
 
+  def followers_count
+    inverse_subscriptions.count
+  end
+
   def joined
     created_at.strftime('%e %B, %Y')
   end    
