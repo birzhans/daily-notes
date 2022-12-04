@@ -1,9 +1,11 @@
 <div class="row">
-  <div class="col-9">
-    <%= @notes.inspect %>
+  <div class="col-3"></div>
+
+  <div class="col-4">
+    <%= render @notes %>
   </div>
 
-  <div class="col-3">
+  <div class="col-3 ms-4">
     <h2>Your subscriptions</h2>
       <% @followings.each do |user| %>
         <p><%= user.username %></p>

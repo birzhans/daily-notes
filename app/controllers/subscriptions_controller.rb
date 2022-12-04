@@ -3,6 +3,6 @@ class SubscriptionsController < ApplicationController
 
   def index
     @followings = current_user.followings
-    @notes = Note.where(user: @followings).ordered
+    @notes = Note.where(user: @followings).ordered.first(10)
   end
 end
