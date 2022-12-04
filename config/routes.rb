@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 
   resources :notes
+  resources :subscriptions
 
   get :profile, to: 'users#profile'
 end

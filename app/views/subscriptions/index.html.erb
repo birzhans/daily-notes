@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-9">
+    <%= @notes.inspect %>
+  </div>
+
+  <div class="col-3">
+    <h2>Your subscriptions</h2>
+      <% @followings.each do |user| %>
+        <p><%= user.username %></p>
+      <% end %>
+  </div>
+</div>

@@ -6,6 +6,12 @@ class User < ApplicationRecord
 
   has_many :notes, dependent: :destroy
 
+  has_many :subscriptions, foreign_key: :subscriber_id, dependent: :destroy
+  has_many :followings, through: :subscriptions, source: :user
+
+  has_many :inverse_subscriptions, class_name: 'Subscription', foreign_key: :user_id, dependent: :destroy
+  has_many :subscribers, through: :inverse_subscriptions, source: :subscriber
+
   def notes_count
     notes.count
   end
