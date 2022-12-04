@@ -5,10 +5,5 @@
     <%= render @notes %>
   </div>
 
-  <div class="col-3 ms-4">
-    <h2>Your subscriptions</h2>
-      <% @followings.each do |user| %>
-        <p><%= user.username %></p>
-      <% end %>
-  </div>
+  <%= render 'followings' %>
 </div>
