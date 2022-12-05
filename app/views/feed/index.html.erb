@@ -1,12 +1,11 @@
 <div class="row">
   <div class="col-4"></div>
 
-  <div class="col-4">
-    <h2>My notes</h2>
-    <%= render 'notes/partials/new_note_button' %>
-    
+  <div class="col-4">  
+    <h2>Feed</h2>
+
     <div class="row" id="notes">
-      <%= render @notes %>
+      <%= render partial: 'note', collection: @notes %>
     </div>
   </div>
 

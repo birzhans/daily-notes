@@ -1,9 +1,16 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  
+
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
+
+  authenticated :user do
+    root "feed#index"
+  end
+
+  unauthenticated :user do
+    root "home#index", as: :unauthenticated_root
+  end
 
   resources :notes
   resources :subscriptions

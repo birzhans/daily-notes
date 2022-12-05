@@ -2,14 +2,12 @@ class SubscriptionsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @followings = current_user.followings
-    @notes = Note.where(user: @followings).ordered.first(10)
+    @subscriptions = current_user.subscriptions.includes(:user)
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @subscription = Subscription.find_by(user: @user, subscriber: current_user)
+    @subscription = current_user.subscriptions.find(params[:id])
     @subscription.destroy
-    render turbo_stream: turbo_stream.remove(@user)
+    render turbo_stream: turbo_stream.remove(@subscription)
   end
 end
