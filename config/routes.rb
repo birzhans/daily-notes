@@ -12,7 +12,9 @@ Rails.application.routes.draw do
     root "home#index", as: :unauthenticated_root
   end
 
-  resources :notes
+  resources :notes do
+    get :calendar, on: :collection
+  end
   resources :subscriptions
 
   get :profile, to: 'users#profile'

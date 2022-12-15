@@ -3,6 +3,7 @@
 
   <div class="col-4">
     <h2>My notes</h2>
+    <div><%= link_to 'Calendar', calendar_notes_path, class: 'btn' %></div>
     <%= render 'notes/partials/new_note_button' %>
     
     <div class="row" id="notes">

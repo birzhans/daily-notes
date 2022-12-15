@@ -4,6 +4,10 @@ class NotesController < ApplicationController
 
   def index
     @notes = current_user.notes.ordered
+    respond_to do |format|
+      format.html
+      format.json { render json: @notes }
+    end
   end
 
   def show
@@ -42,6 +46,10 @@ class NotesController < ApplicationController
   def destroy
     @note.destroy
     render turbo_stream: turbo_stream.remove(@note)
+  end
+
+  def calendar
+    @notes = current_user.notes.ordered
   end
 
   private

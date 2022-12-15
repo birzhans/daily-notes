@@ -1,5 +1,6 @@
 class Note < ApplicationRecord
   belongs_to :user
+  delegate :username, to: :user
 
   validates :body, :date, presence: true
   validates :date, uniqueness: { scope: :user_id }
